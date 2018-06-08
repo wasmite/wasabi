@@ -25,7 +25,7 @@ FOAM provides solutions for such type of problems - [Crypto Spatial Coordinate (
 ## Internet of Things (Arduino-compatible ESP32 chip)
 Besides all benefits from current IoT systems stays common problem - diversity of protocols and standards (IO-Link, MQTT, CoAP, gRPC, REST). Our concept aimed to unify devices with one medium: prototype-friendly Arduino-platform and IoT Espressif’s Hybrid Wi-Fi & Bluetooth Chip ESP32 Chip.
 
-## EVM implementations
+## EVM implementations and technology stack
 
 | Project       | Licence     | IoT compatible |
 | ------------- | ----------- | -------------- |
@@ -36,7 +36,15 @@ Besides all benefits from current IoT systems stays common problem - diversity o
 | pyethereum    | MIT         | no             |
 | hevm          | AGPL-3.0    | no             | 
 
-Currently there are exists lots of VM implementations, both as standalone or tightly integrated into existing ethereum nodes, but they are all lacking support for tiny microcontrollers.
+Currently there are exists lots of VM implementations, both as standalone or tightly integrated into existing ethereum nodes, but they are all lacking support for `tiny` microcontrollers. 
+
+We define `tiny` as: 
+* single or dual core System-on-Chip(SoC)
+* <200 Mhz clock speed
+* 1-2 Mb RAM
+
+To implement EEVM we would use ISO C99 with some Lua configuration scripting.
+Also to fit hardware restrictions some data types may require stripping, further investigation on this topic is required.
 
 ## AWS & Google IoT Platforms (Mongoose OS)
 Mongoose OS is production grade embedded RTOS with out-of-box integration with all major cloud IoT platforms AWS, Google, Azure, Samsung. It’s a good choice for production ready platform with a great documentation and bunch of examples. 
