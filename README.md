@@ -57,6 +57,6 @@ In current form Ethereum is too resource intensive to use it as medium for robon
 ## Formal smart-contracts verification (K-semantics)
 Especially for embedded devices it’s very important to formally verify smart-contract logic. KEVM brings for us a good basis to automate this process. For every smart-contract we will create additionally k-semantics in order to formally proof it’s internal logic.
 
-## Licence (Unlicence)
+## Unlicensed
 The Unlicense is a public domain equivalent license with a focus on an anti-copyright message.
 
