@@ -2,4 +2,4 @@
 Would written in portable ANSI-C with the help of Lua scripting for console tools and test harnesses.
 
 ## Unlicensed
-The Unlicense is a public domain equivalent license with a focus on an anti-copyright message.
+EEVM is free and unencumbered public domain software. For more information, see http://unlicense.org/ or the accompanying LICENSE file.
