@@ -1,11 +1,11 @@
 # μEVM (Micro Ethereum Virtual Machine)
 
-Highly-portable Ethereum VM [complains EVMC API](https://github.com/ethereum/evmc)
-distributed as a single header library without dependencies and licensed under public domain.
+Highly-portable Ethereum VM [complains EVMC API](https://github.com/ethereum/evmc),
+distributed as a single header file without dependencies and licensed under public domain.
 
 ## Features
 
-- Single header library written in C89 (ANSI C)
+- Single header file written in C89 (ANSI C)
 - Focus on portability, efficiency and simplicity
 - No dependencies (not even the standard library if not wanted)
 - Low memory footprint with total memory control if needed or wanted
@@ -13,7 +13,7 @@ distributed as a single header library without dependencies and licensed under p
 
 ## Usage
 
-This library is self contained in one single header file and can be used either
+This vm is self contained in one single header file and can be used either
 in header only mode or in implementation mode. The header only mode is used
 by default when included and allows including this header in other headers
 and does not contain the actual implementation.

@@ -1,2 +1,21 @@
+~*
+*~
+_*
+*#
+.#*
+
+*.bk*
+*.swp
+.DS_Store
+
+# Binaries for programs and plugins
 *.exe
-*.obj
+*.dll
+*.so
+*.dylib
+
+# Makefile
+bin
+
+# VSCode
+.vscode
