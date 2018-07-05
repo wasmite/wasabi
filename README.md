@@ -32,6 +32,13 @@ by the preprocessor macro `UEVM_IMPLEMENTATION`), e.g.:
 // TBD
 ```
 
+Check out [the reference](docs/00 - introduction.md) for more details.
+
+## How to get support
+
+Check out [our website](https://git.io/nemtool) for more usage specific details,
+or chat with us in the [Gitter chat](https://gitter.im/nem-toolchain/Lobby).
+
 ## Unlicensed
 
 μEVM is free and unencumbered public domain software,
