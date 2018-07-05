@@ -1,3 +1,0 @@
-# μEVM Manual
-
-TBD
