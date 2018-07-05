@@ -9,11 +9,17 @@ with no dependencies and licensed under public domain.
 - Focus on portability, efficiency and simplicity
 - No dependencies (not even the standard library if not wanted)
 
+## Building
+
+```bash
+make
+```
+
 ## Usage
 
 μEVM is self contained in one single header file and can be used either
 in header only mode (by default) or in implementation mode (is activated
-by requires the preprocessor macro `UEVM_IMPLEMENTATION`), e.g.:
+by the preprocessor macro `UEVM_IMPLEMENTATION`), e.g.:
 
 ```c
 #define UEVM_IMPLEMENTATION
@@ -22,11 +28,9 @@ by requires the preprocessor macro `UEVM_IMPLEMENTATION`), e.g.:
 
 ## Example
 
-TBD
-
-## Building
-
-TBD
+```c
+// TBD
+```
 
 ## Unlicensed
 
