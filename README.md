@@ -7,7 +7,7 @@ with no dependencies and licensed under public domain.
 
 - Single header file written in C89 (ANSI C)
 - Focus on portability, efficiency and simplicity
-- No dependencies (not even the standard library if not wanted)
+- No dependencies (not even `libc` if not wanted)
 
 ## Building
 
