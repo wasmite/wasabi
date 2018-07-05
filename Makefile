@@ -1,10 +1,10 @@
-COMMON_CFLAGS = -Wall -Wextra -Wpedantic -Werror
+COMMON_CFLAGS = -Wall -Wextra -Werror
 COMMON_CFLAGS += -Wmissing-declarations
 COMMON_CFLAGS += -Wmissing-prototypes
 COMMON_CFLAGS += -Wstrict-prototypes
 
 CC ?= clang
-SRC_CFLAGS ?= ${COMMON_FLAGS} -g -std=c89
+SRC_CFLAGS ?= ${COMMON_FLAGS} -g -ansi -pedantic
 TST_CFLAGS ?= ${COMMON_FLAGS} -g -std=c99
 
 PRG_FILES = main
