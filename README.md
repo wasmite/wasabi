@@ -32,7 +32,7 @@ by the preprocessor macro `UEVM_IMPLEMENTATION`), e.g.:
 // TBD
 ```
 
-Check out [the documentation](docs/00 - index.md) for more details.
+Check out [the documentation](docs/Readme.md) for more details.
 
 ## Public Domain
 
