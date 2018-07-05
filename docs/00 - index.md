@@ -1,3 +1,3 @@
-# μEVM Documantation
+# μEVM Documentation
 
 TBD
