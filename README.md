@@ -34,7 +34,7 @@ by the preprocessor macro `UEVM_IMPLEMENTATION`), e.g.:
 
 Check out [the documentation](docs/00 - index.md) for more details.
 
-## Unlicensed
+## Public Domain
 
 μEVM is free and unencumbered public domain software,
 for more information, see http://unlicense.org/.
