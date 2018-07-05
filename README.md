@@ -12,11 +12,8 @@ with no dependencies and licensed under public domain.
 ## Usage
 
 μEVM is self contained in one single header file and can be used either
-in header only mode or in implementation mode.
-
-The header only mode is used by default and does not contain the actual
-implementation, which requires to define the preprocessor macro
-`UEVM_IMPLEMENTATION` before `#include`ing this file, e.g.:
+in header only mode (by default) or in implementation mode (is activated
+by requires the preprocessor macro `UEVM_IMPLEMENTATION`), e.g.:
 
 ```c
 #define UEVM_IMPLEMENTATION
