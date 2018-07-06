@@ -11,7 +11,7 @@
 #ifndef UEVM_H_
 #define UEVM_H_
 
-#if defined(__cplusplus) || defined(c_plusplus)
+#ifdef __cplusplus
 extern "C" {
 #endif
 
@@ -30,8 +30,8 @@ typedef __int64 int64_t;
 #include <stdint.h>
 #endif /* defined(_MSC_VER) && (_MSC_VER < 1600) */
 
-#if defined(__cplusplus) || defined(c_plusplus)
-}  /* extern "C" */
+#ifdef __cplusplus
+}
 #endif
 
 #endif  /* UEVM_H_ */
