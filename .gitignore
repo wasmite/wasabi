@@ -8,14 +8,14 @@ _*
 *.swp
 .DS_Store
 
-# Binaries for programs and plugins
+.vscode
+
+bin/
+build/
+dist/
+
 *.exe
 *.dll
+*.o
 *.so
 *.dylib
-
-# Makefile
-bin
-
-# VSCode
-.vscode
