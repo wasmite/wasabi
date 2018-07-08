@@ -4,3 +4,9 @@
 [submodule "greatest"]
 	path = greatest
 	url = https://github.com/silentbicycle/greatest
+[submodule "tests/VMTests"]
+	path = tests/VMTests
+	url = https://github.com/ethereum/tests
+[submodule "tests/test_data"]
+	path = tests/test_data
+	url = https://github.com/ethereum/tests
