@@ -32,30 +32,29 @@ typedef __int64 int64_t;
 
 #define EVM_WORD_SIZE 32
 #define EVM_STACK_SIZE 1024
-#define EVM_WORD x[EVM_WORD_SIZE]
+
+typedef uint8_t Word;
 
 typedef enum {
     STOP = 0x00,
     ADD = 0x01,
-    LT = 0x10
+    LT = 0x10,
+    PUSH1 = 0x60
 } OpCode;
 
-
-typedef struct Stack {
-    uint8_t stack[EVM_STACK_SIZE][EVM_WORD_SIZE];
-    uint8_t* top;
+typedef struct {
+    uint8_t data[EVM_STACK_SIZE];
+    int top;
 } Stack;
 
-typedef struct Interpreter {
-    void (*execute)(OpCode op);
-} Interpreter;
-
-typedef struct EVM {
+typedef struct {
     Stack stack;
-    Interpreter interpreter;
+    uint16_t pc;
 } EVM;
 
-
+/*
+ * Create new EVM
+ */
 EVM NewEVM();
 
 #ifdef __cplusplus
