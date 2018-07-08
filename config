@@ -11,5 +11,5 @@ TST_CFLAGS ?= ${COMMON_FLAGS} -g -std=c99
 
 #
 PRG_FILES = main
-SRC_FILES = main.c
+SRC_FILES = src/main.c src/uevm.c
 TST_FILES = simple_test.c

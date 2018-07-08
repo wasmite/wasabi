@@ -30,6 +30,34 @@ typedef __int64 int64_t;
 #include <stdint.h>
 #endif /* defined(_MSC_VER) && (_MSC_VER < 1600) */
 
+#define EVM_WORD_SIZE 32
+#define EVM_STACK_SIZE 1024
+#define EVM_WORD x[EVM_WORD_SIZE]
+
+typedef enum {
+    STOP = 0x00,
+    ADD = 0x01,
+    LT = 0x10
+} OpCode;
+
+
+typedef struct Stack {
+    uint8_t stack[EVM_STACK_SIZE][EVM_WORD_SIZE];
+    uint8_t* top;
+} Stack;
+
+typedef struct Interpreter {
+    void (*execute)(OpCode op);
+} Interpreter;
+
+typedef struct EVM {
+    Stack stack;
+    Interpreter interpreter;
+} EVM;
+
+
+EVM NewEVM();
+
 #ifdef __cplusplus
 }
 #endif
