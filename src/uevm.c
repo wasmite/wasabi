@@ -1,5 +1,6 @@
-#include "uevm.h"
 #include <stdio.h>
+
+#include "uevm.h"
 
 
 /* Stack */
@@ -8,7 +9,6 @@ static Stack NewStack() {
     
     return st;
 }
-
 static int push(Stack * const stack, uint8_t word) {
     if (stack->top > EVM_STACK_SIZE -1) {
         return -1;
@@ -18,7 +18,6 @@ static int push(Stack * const stack, uint8_t word) {
     
     return 0;
 }
-
 static Word pop(Stack * const stack) {
     Word w;
    
@@ -30,8 +29,6 @@ static Word pop(Stack * const stack) {
     stack->top--;
     return w;
 }
-
-
 static int execute(EVM * const vm, OpCode opcode, uint8_t code[]) {
     switch(opcode) {
         case STOP: {
