@@ -11,8 +11,18 @@ with no dependencies and licensed under public domain.
 
 ## Building
 
+Make:
+
 ```bash
 make
+```
+
+CMake:
+
+```bash
+mkdir build | cd
+cmake ..
+cmake --build .
 ```
 
 ## Usage
@@ -60,4 +70,3 @@ ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
 For more information, please refer to <http://unlicense.org/>
-
