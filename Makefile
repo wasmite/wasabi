@@ -4,7 +4,7 @@ COMMON_CFLAGS += -Wmissing-prototypes
 COMMON_CFLAGS += -Wstrict-prototypes
 
 CC ?= clang
-SRC_CFLAGS ?= ${COMMON_FLAGS} -g -ansi -pedantic
+SRC_CFLAGS ?= ${COMMON_FLAGS} -g -std=c89 -pedantic
 TST_CFLAGS ?= ${COMMON_FLAGS} -g -std=c99
 
 PRG_FILES = main
@@ -17,3 +17,4 @@ all:
 fmt:
 	find . -iname *.h -o -iname *.c -o \
     | xargs clang-format -style=file -i -fallback-style=none
+
