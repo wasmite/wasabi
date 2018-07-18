@@ -14,5 +14,6 @@ TST_FILES = simple_test.c
 all:
 	${CC} ${SRC_CFLAGS} -I./include ${SRC_FILES} -o ${PRG_FILES}
 
-tests:
-	go run tests/VMTester.go test
+fmt:
+	find . -iname *.h -o -iname *.c -o \
+    | xargs clang-format -style=file -i -fallback-style=none
