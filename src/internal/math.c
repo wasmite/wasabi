@@ -18,6 +18,9 @@ uint8_t math_add(uint8_t a, uint8_t b) {
 #include "test.h"
 
 int test_add() {
+  ASSERT(math_add(0, 0) == 0);
+  ASSERT(math_add(0, 1) == 1);
+  ASSERT(math_add(1, 0) == 1);
   ASSERT(math_add(1, 1) == 2);
   return 0;
 }

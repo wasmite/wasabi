@@ -16,7 +16,7 @@
 
 #define FAIL(str, line)                           \
   do {                                            \
-    printf("Fail on line %d: [%s]\n", line, str); \
+    printf("Fail on line %d: '%s'\n", line, str); \
   } while (0)
 
 #define ASSERT(expr)                    \
