@@ -9,7 +9,7 @@
  */
 
 #include <stdio.h>
-#include "internal/math.h"
+#include "core/math.h"
 #include "uevm/api.h"
 
 uint8_t uevm_add(uint8_t a, uint8_t b) {
@@ -17,7 +17,7 @@ uint8_t uevm_add(uint8_t a, uint8_t b) {
 }
 
 #ifndef NDEBUG
-#include "internal/test.h"
+#include "core/test.h"
 
 int main() {
   TESTSUIT(math_testsuit);

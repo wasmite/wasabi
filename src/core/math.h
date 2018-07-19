@@ -8,8 +8,8 @@
  * @brief   Math util functions.
  */
 
-#ifndef INTERNAL_MATH_H_
-#define INTERNAL_MATH_H_
+#ifndef CORE_MATH_H_
+#define CORE_MATH_H_
 
 #include <uevm/types.h>
 
@@ -35,4 +35,4 @@ int math_testsuit();
 }
 #endif
 
-#endif /* INTERNAL_MATH_H_ */
+#endif /* CORE_MATH_H_ */
