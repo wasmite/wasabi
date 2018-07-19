@@ -9,21 +9,8 @@
  */
 
 #include <stdio.h>
+#include "core/test.h"
 #include "uevm/api.h"
-
-#define FAIL()                                       \
-  do {                                               \
-    printf("Fail in '%s:%d'\n", __FILE__, __LINE__); \
-    return 1;                                        \
-  } while (0)
-
-#define ASSERT(expr)                                                \
-  do {                                                              \
-    if (!(expr)) {                                                  \
-      printf("'%s' fails in '%s:%d'\n", #expr, __FILE__, __LINE__); \
-      return 1;                                                     \
-    }                                                               \
-  } while (0)
 
 int main() {
   ASSERT(uevm_add(0, 0) == 0);
