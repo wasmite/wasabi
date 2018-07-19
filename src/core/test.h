@@ -9,8 +9,8 @@
  * @brief   Unittests releated macros
  */
 
-#ifndef INTERNAL_TEST_H_
-#define INTERNAL_TEST_H_
+#ifndef CORE_TEST_H_
+#define CORE_TEST_H_
 
 #include <stdio.h>
 
@@ -36,4 +36,4 @@
 
 #define TESTSUIT(suit) TESTCASE(suit)
 
-#endif /* INTERNAL_TEST_H_ */
+#endif /* CORE_TEST_H_ */
