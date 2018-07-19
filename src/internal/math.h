@@ -11,7 +11,7 @@
 #ifndef INTERNAL_MATH_H_
 #define INTERNAL_MATH_H_
 
-#include <uevm/types.h>
+#include "./include/uevm/types.h"
 
 #ifdef __cplusplus
 extern "C" {
