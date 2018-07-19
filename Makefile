@@ -15,6 +15,6 @@ all:
 	${CC} ${SRC_CFLAGS} -I./include ${SRC_FILES} -o ${PRG_FILES}
 
 fmt:
-	find . -iname *.h -o -iname *.c -o \
-    | xargs clang-format -style=file -i -fallback-style=none
+	find . -iname *.h -o -iname *.c \
+	| xargs clang-format -style=file -i 
 

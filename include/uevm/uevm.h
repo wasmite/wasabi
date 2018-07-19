@@ -15,7 +15,7 @@
 extern "C" {
 #endif
 
-#include <stddef.h>  /* for size_t */
+#include <stddef.h> /* for size_t */
 
 #if defined(_MSC_VER) && (_MSC_VER < 1600)
 typedef __int8 int8_t;
@@ -35,21 +35,16 @@ typedef __int64 int64_t;
 
 typedef uint8_t Word;
 
-typedef enum {
-    STOP = 0x00,
-    ADD = 0x01,
-    LT = 0x10,
-    PUSH1 = 0x60
-} OpCode;
+typedef enum { STOP = 0x00, ADD = 0x01, LT = 0x10, PUSH1 = 0x60 } OpCode;
 
 typedef struct {
-    uint8_t data[EVM_STACK_SIZE];
-    int top;
+  uint8_t data[EVM_STACK_SIZE];
+  int top;
 } Stack;
 
 typedef struct {
-    Stack stack;
-    uint16_t pc;
+  Stack stack;
+  uint16_t pc;
 } EVM;
 
 /*
@@ -61,4 +56,4 @@ EVM NewEVM();
 }
 #endif
 
-#endif  /* UEVM_H_ */
+#endif /* UEVM_H_ */
