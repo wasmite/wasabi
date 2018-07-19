@@ -1,9 +1,5 @@
-#include <stdio.h>
+#include <uevm/api.h>
 
-#include "uevm.h"
-
-
-int main()
-{
+int main() {
     return 0;
 }

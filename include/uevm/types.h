@@ -5,15 +5,11 @@
 
 /**
  * @file
- * Common type definitions.
+ * @brief Common type definitions.
  */
 
-#ifndef TYPES_H_
-#define TYPES_H_
-
-#ifdef __cplusplus
-extern "C" {
-#endif
+#ifndef UEVM_TYPES_H_
+#define UEVM_TYPES_H_
 
 #include <stddef.h> /* for size_t */
 
@@ -30,8 +26,4 @@ typedef __int64 int64_t;
 #include <stdint.h>
 #endif /* defined(_MSC_VER) && (_MSC_VER < 1600) */
 
-#ifdef __cplusplus
-}
-#endif
-
-#endif /* TYPES_H_ */
+#endif /* UEVM_TYPES_H_ */

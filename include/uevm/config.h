@@ -5,11 +5,11 @@
 
 /**
  * @file
- * μEVM compilation predefines.
+ * @brief μEVM compilation predefines.
  */
 
-#ifndef CONFIG_H_
-#define CONFIG_H_
+#ifndef UEVM_CONFIG_H_
+#define UEVM_CONFIG_H_
 
 // nothing yet here
 

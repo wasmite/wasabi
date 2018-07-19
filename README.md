@@ -61,8 +61,8 @@ make clean
 
 ## Usage
 
-μEVM is contributed ad a single file of C-code named "uevm.c" contains
-everything an application needs to embed μEVM.
+μEVM is contributed as a single file named "uevm.c" contains everything
+an application needs to embed μEVM.
 
 Check out [the documentation](docs/Readme.md) for more details.
 

@@ -12,14 +12,6 @@
 
 #include <brotli/types.h>
 
-#ifdef __cplusplus
-extern "C" {
-#endif
-
 uint8_t uevm_add(uint8_t a, uint8_t b) {
   return math_add(a, b);
 }
-
-#ifdef __cplusplus
-}
-#endif
