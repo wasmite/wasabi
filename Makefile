@@ -20,7 +20,7 @@ all:
 	$(CC) $(SRC_CFLAGS) -I./include $(SRC_FILES) -o $(BUILD_DIR)/unittests
 
 fmt: ## apply `clang-format` to all source code
-	find . -iname *.h -o -iname *.c -o \
+	find . -iname *.h -o -iname *.c \
 		| xargs clang-format -style=file -i -fallback-style=none
 
 clean:
