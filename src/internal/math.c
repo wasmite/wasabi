@@ -10,12 +10,14 @@
 
 #include "math.h"
 
-#include "test_util.h"
-
 uint8_t math_add(uint8_t a, uint8_t b) {
   return a + b;
 }
 
+#ifndef NDEBUG
+#include "test.h"
+
 void test_add() {
     ASSERT(math_add(1, 1) == 2);
 }
+#endif
