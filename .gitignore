@@ -9,10 +9,8 @@ _*
 .DS_Store
 
 .vscode
-
-bin/
-build/
-dist/
+build
+dist
 
 *.exe
 *.dll
