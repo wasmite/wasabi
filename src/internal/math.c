@@ -8,9 +8,7 @@
  * Math util functions.
  */
 
-#include "./math.h"
-
-#include <uevm/types.h>
+#include "math.h"
 
 uint8_t math_add(uint8_t a, uint8_t b) {
   return a + b;

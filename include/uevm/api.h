@@ -11,7 +11,7 @@
 #ifndef UEVM_API_H_
 #define UEVM_API_H_
 
-#include <uevm/types.h>
+#include "./include/uevm/api.h"
 
 #ifdef __cplusplus
 extern "C" {
