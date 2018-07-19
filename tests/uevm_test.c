@@ -1,14 +1,18 @@
 #include <stdio.h>
 #include "uevm/api.h"
 
-#define FAIL(str, line)                           \
-  do {                                            \
-    printf("Fail on line %d: '%s'\n", line, str); \
+#define FAIL()                             \
+  do {                                     \
+    printf("Fail on line %d\n", __LINE__); \
+    return 1;                              \
   } while (0)
 
-#define ASSERT(expr)                    \
-  do {                                  \
-    if (!(expr)) FAIL(#expr, __LINE__); \
+#define ASSERT(expr)                                      \
+  do {                                                    \
+    if (!(expr)) {                                        \
+      printf("Fail on line %d: '%s'\n", __LINE__, #expr); \
+      return 1;                                           \
+    }                                                     \
   } while (0)
 
 int main() {
