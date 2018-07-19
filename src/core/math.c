@@ -4,8 +4,8 @@
  */
 
 /**
- * @file    math.c
- * @brief   Math util functions.
+ * @file  math.c
+ * @brief Math util functions.
  */
 
 #include "math.h"

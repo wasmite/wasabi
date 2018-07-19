@@ -5,8 +5,8 @@
  */
 
 /**
- * @file    test.h
- * @brief   Unittests releated macros
+ * @file  test.h
+ * @brief Unittests releated macros
  */
 
 #ifndef CORE_TEST_H_
@@ -16,7 +16,7 @@
 
 #define FAIL()                                       \
   do {                                               \
-    printf("Fail in '%s:%d'\n", __FILE__, __LINE__); \
+  printf("Fail in '%s:%d'\n", __FILE__, __LINE__); \
     return 1;                                        \
   } while (0)
 

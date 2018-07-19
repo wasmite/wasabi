@@ -4,8 +4,8 @@
  */
 
 /**
- * @file    math.h
- * @brief   Math util functions.
+ * @file  math.h
+ * @brief Math util functions.
  */
 
 #ifndef CORE_MATH_H_

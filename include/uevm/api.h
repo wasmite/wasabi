@@ -4,8 +4,8 @@
  */
 
 /**
- * @file    api.h
- * @brief   μEVM public API.
+ * @file  api.h
+ * @brief μEVM public API.
  */
 
 #ifndef UEVM_API_H_

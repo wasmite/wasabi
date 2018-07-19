@@ -4,8 +4,8 @@
  */
 
 /**
- * @file    uevm.c
- * @brief   μEVM public API impl.
+ * @file  uevm.c
+ * @brief μEVM public API impl.
  */
 
 #include <stdio.h>
