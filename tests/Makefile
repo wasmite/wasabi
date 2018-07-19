@@ -7,6 +7,7 @@ SOURCES = uevm_test.c \
 
 INCS = -I$(REPO_ROOT)/src \
        -I$(REPO_ROOT)/src/internal \
+			 -I$(REPO_ROOT)/include \
 			 -I$(REPO_ROOT) \
        -I. \
        $(CFLAGS_EXTRA)
