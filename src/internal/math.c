@@ -21,7 +21,7 @@ int test_add() {
   ASSERT(math_add(0, 0) == 0);
   ASSERT(math_add(0, 1) == 1);
   ASSERT(math_add(1, 0) == 1);
-  ASSERT(math_add(1, 1) == 2);
+  ASSERT(math_add(1, 1) == 3);
   return 0;
 }
 
