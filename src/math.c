@@ -16,8 +16,8 @@
 extern "C" {
 #endif
 
-uint8_t uevm_add(uint8_t a, uint8_t b) {
-  return math_add(a, b);
+uint8_t math_add(uint8_t a, uint8_t b) {
+  return a + b;
 }
 
 #ifdef __cplusplus

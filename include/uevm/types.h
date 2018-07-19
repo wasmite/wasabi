@@ -5,19 +5,17 @@
 
 /**
  * @file
- * μEVM public API.
+ * Common type definitions.
  */
 
-#ifndef UEVM_H_
-#define UEVM_H_
+#ifndef TYPES_H_
+#define TYPES_H_
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#include <types.h>
-
-#include <stddef.h>  /* for size_t */
+#include <stddef.h> /* for size_t */
 
 #if defined(_MSC_VER) && (_MSC_VER < 1600)
 typedef __int8 int8_t;
@@ -32,17 +30,8 @@ typedef __int64 int64_t;
 #include <stdint.h>
 #endif /* defined(_MSC_VER) && (_MSC_VER < 1600) */
 
-/*
- * Helper function that adds two unsigned 8-bits numbers.
- *
- * @param[in] first number
- * @param[in] second number
- * @returns a sum of two given numbers
- */
-uint8_t uevm_add(uint8_t a, uint8_t b);
-
 #ifdef __cplusplus
 }
 #endif
 
-#endif  /* UEVM_H_ */
+#endif /* TYPES_H_ */

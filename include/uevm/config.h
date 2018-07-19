@@ -8,9 +8,9 @@
  * μEVM compilation predefines.
  */
 
-#ifndef UEVM_CONFIG_H_
-#define UEVM_CONFIG_H_
+#ifndef CONFIG_H_
+#define CONFIG_H_
 
 // nothing yet here
 
-#endif /* UEVM_H_ */
+#endif /* CONFIG_H_ */
