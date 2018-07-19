@@ -1,46 +1,68 @@
 # μEVM (Micro Ethereum Virtual Machine)
 
-Highly-portable Ethereum VM distributed as a single header file
-with no dependencies and licensed under public domain.
+Highly-portable Ethereum VM with no dependencies licensed under public domain.
 
 ## Features
 
-- Single header file written in C89 (ANSI C)
+- Single source file written in ANSI C (C89)
 - Focus on portability, efficiency and simplicity
 - No dependencies (not even `libc` if not wanted)
 
 ## Building
 
-Make:
+By default, check format style, run static analyzers, unittests and build
+an `μEVM` distribution:
 
 ```bash
 make
 ```
 
-CMake:
+How to build `μEVM` distribution:
 
 ```bash
-mkdir build | cd
-cmake ..
-cmake --build .
+make dist
+```
+
+How to check the format style:
+
+```bash
+make fmt
+```
+
+How to run static analyzers:
+
+```bash
+make check
+```
+
+How to run unit tests:
+
+```bash
+make unit
+```
+
+How to run unit tests and generate coverage reports:
+
+```bash
+make coverage
+```
+
+How to run functional tests:
+
+```bash
+make tests
+```
+
+How to clean up build files:
+
+```bash
+make clean
 ```
 
 ## Usage
 
-μEVM is self contained in one single header file and can be used either
-in header only mode (by default) or in implementation mode (is activated
-by the preprocessor macro `UEVM_IMPLEMENTATION`), e.g.:
-
-```c
-#define UEVM_IMPLEMENTATION
-#include "uevm.h"
-```
-
-## Example
-
-```c
-// TBD
-```
+μEVM is contributed ad a single file of C-code named "uevm.c" contains
+everything an application needs to embed μEVM.
 
 Check out [the documentation](docs/Readme.md) for more details.
 
