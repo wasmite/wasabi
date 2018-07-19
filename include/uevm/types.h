@@ -4,8 +4,8 @@
  */
 
 /**
- * @file
- * @brief Common type definitions.
+ * @file    types.h
+ * @brief   Common type definitions.
  */
 
 #ifndef UEVM_TYPES_H_

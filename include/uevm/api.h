@@ -4,14 +4,14 @@
  */
 
 /**
- * @file
- * @brief μEVM public API.
+ * @file    api.h
+ * @brief   μEVM public API.
  */
 
 #ifndef UEVM_API_H_
 #define UEVM_API_H_
 
-#include "./include/uevm/types.h"
+#include "types.h"
 
 #ifdef __cplusplus
 extern "C" {

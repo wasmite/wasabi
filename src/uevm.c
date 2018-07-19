@@ -4,13 +4,13 @@
  */
 
 /**
- * @file
- * Math util functions.
+ * @file    uevm.c
+ * @brief   μEVM public API impl.
  */
 
-#include "./math.h"
+#include "internal/math.h"
 
-#include <brotli/types.h>
+#include "uevm/types.h"
 
 uint8_t uevm_add(uint8_t a, uint8_t b) {
   return math_add(a, b);

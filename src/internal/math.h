@@ -4,14 +4,14 @@
  */
 
 /**
- * @file
- * @brief Math util functions.
+ * @file    math.h
+ * @brief   Math util functions.
  */
 
 #ifndef INTERNAL_MATH_H_
 #define INTERNAL_MATH_H_
 
-#include "./include/uevm/types.h"
+#include <uevm/types.h>
 
 #ifdef __cplusplus
 extern "C" {

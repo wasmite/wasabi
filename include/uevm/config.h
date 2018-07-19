@@ -4,8 +4,8 @@
  */
 
 /**
- * @file
- * @brief μEVM compilation predefines.
+ * @file    config.h
+ * @brief   μEVM compilation predefines.
  */
 
 #ifndef UEVM_CONFIG_H_
