@@ -27,6 +27,10 @@ extern "C" {
  */
 uint8_t math_add(uint8_t a, uint8_t b);
 
+#ifndef NDEBUG
+int math_testsuit();
+#endif
+
 #ifdef __cplusplus
 }
 #endif

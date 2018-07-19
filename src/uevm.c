@@ -16,7 +16,11 @@ uint8_t uevm_add(uint8_t a, uint8_t b) {
   return math_add(a, b);
 }
 
+#ifndef NDEBUG
+#include "internal/test.h"
+
 int main() {
-  printf("Hello, world!\n");
+  TESTSUIT(math_testsuit);
   return 0;
 }
+#endif

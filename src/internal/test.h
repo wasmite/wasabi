@@ -6,20 +6,30 @@
 
 /**
  * @file    test.h
- * @brief   Unit tests releated macros
+ * @brief   Unittests releated macros
  */
 
 #ifndef INTERNAL_TEST_H_
 #define INTERNAL_TEST_H_
 
-#define FAIL(str, line)                             \
-  do {                                              \
-    printf("Fail on line %d: [%s]\n", line, str);   \
+#include <stdio.h>
+
+#define FAIL(str, line)                           \
+  do {                                            \
+    printf("Fail on line %d: [%s]\n", line, str); \
   } while (0)
 
-#define ASSERT(expr)                                \
-  do {                                              \
-    if (!(expr)) FAIL(#expr, __LINE__);             \
+#define ASSERT(expr)                    \
+  do {                                  \
+    if (!(expr)) FAIL(#expr, __LINE__); \
   } while (0)
+
+#define TESTCASE(case)                \
+  do {                                \
+    int resp;                         \
+    if (resp = (case)()) return resp; \
+  } while (0)
+
+#define TESTSUIT(suit) TESTCASE(suit)
 
 #endif /* INTERNAL_TEST_H_ */

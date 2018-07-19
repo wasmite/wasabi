@@ -17,7 +17,13 @@ uint8_t math_add(uint8_t a, uint8_t b) {
 #ifndef NDEBUG
 #include "test.h"
 
-void test_add() {
-    ASSERT(math_add(1, 1) == 2);
+int test_add() {
+  ASSERT(math_add(1, 1) == 2);
+  return 0;
+}
+
+int math_testsuit() {
+  TESTCASE(test_add);
+  return 0;
 }
 #endif
