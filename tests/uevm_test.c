@@ -7,12 +7,12 @@
     return 1;                                        \
   } while (0)
 
-#define ASSERT(expr)                                                       \
-  do {                                                                     \
-    if (!(expr)) {                                                         \
-      printf("'%s' assert fails in '%s:%d'\n", #expr, __FILE__, __LINE__); \
-      return 1;                                                            \
-    }                                                                      \
+#define ASSERT(expr)                                                \
+  do {                                                              \
+    if (!(expr)) {                                                  \
+      printf("'%s' fails in '%s:%d'\n", #expr, __FILE__, __LINE__); \
+      return 1;                                                     \
+    }                                                               \
   } while (0)
 
 int main() {

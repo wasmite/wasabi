@@ -1,6 +1,6 @@
-OS := $(shell uname)
-
 CC ?= clang
+
+OS := $(shell uname)
 
 COMMON_CFLAGS = -Wall -Wextra -Werror
 COMMON_CFLAGS += -Wmissing-declarations
