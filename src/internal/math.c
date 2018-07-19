@@ -10,16 +10,8 @@
 
 #include "./math.h"
 
-#include <brotli/types.h>
-
-#ifdef __cplusplus
-extern "C" {
-#endif
+#include <uevm/types.h>
 
 uint8_t math_add(uint8_t a, uint8_t b) {
   return a + b;
 }
-
-#ifdef __cplusplus
-}
-#endif

@@ -5,23 +5,24 @@
 
 /**
  * @file
- * Math util functions.
+ * @brief Math util functions.
  */
 
-#ifndef MATH_H_
-#define MATH_H_
+#ifndef INTERNAL_MATH_H_
+#define INTERNAL_MATH_H_
+
+#include <uevm/types.h>
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#include <uevm/types.h>
-
 /*
- * Helper function that adds two unsigned 8-bits numbers.
+ * @brief Helper function that adds two unsigned 8-bits numbers.
  *
- * @param[in] first number
- * @param[in] second number
+ * @param[in] a     first number
+ * @param[in] b     second number
+ *
  * @returns a sum of two given numbers
  */
 uint8_t math_add(uint8_t a, uint8_t b);
@@ -30,4 +31,4 @@ uint8_t math_add(uint8_t a, uint8_t b);
 }
 #endif
 
-#endif /* MATH_H_ */
+#endif /* INTERNAL_MATH_H_ */
