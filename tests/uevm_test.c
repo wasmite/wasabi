@@ -25,7 +25,6 @@
     }                                                               \
   } while (0)
 
-
 int main() {
   ASSERT(uevm_add(0, 0) == 0);
   ASSERT(uevm_add(0, 1) == 1);

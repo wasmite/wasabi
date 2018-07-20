@@ -8,8 +8,8 @@
  * @brief μEVM public API.
  */
 
-#ifndef UEVM_API_H_
-#define UEVM_API_H_
+#ifndef UEVM_API_H
+#define UEVM_API_H
 
 #include "types.h"
 
@@ -33,4 +33,4 @@ uint8_t uevm_add(uint8_t a, uint8_t b);
 }
 #endif
 
-#endif /* UEVM_API_H_ */
+#endif /* UEVM_API_H */

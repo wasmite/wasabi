@@ -8,8 +8,8 @@
  * @brief Common type definitions.
  */
 
-#ifndef UEVM_TYPES_H_
-#define UEVM_TYPES_H_
+#ifndef UEVM_TYPES_H
+#define UEVM_TYPES_H
 
 #include <stddef.h> /* for size_t */
 
@@ -26,4 +26,4 @@ typedef __int64 int64_t;
 #include <stdint.h>
 #endif /* defined(_MSC_VER) && (_MSC_VER < 1600) */
 
-#endif /* UEVM_TYPES_H_ */
+#endif /* UEVM_TYPES_H */
