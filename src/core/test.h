@@ -9,8 +9,8 @@
  * @brief Unittests releated macros
  */
 
-#ifndef CORE_TEST_H_
-#define CORE_TEST_H_
+#ifndef _UEVM_SRC_CORE_TEST_H
+#define _UEVM_SRC_CORE_TEST_H
 
 #include <stdio.h>
 
@@ -36,4 +36,4 @@
 
 #define TESTSUIT(suit) TESTCASE(suit)
 
-#endif /* CORE_TEST_H_ */
+#endif  // _UEVM_SRC_CORE_TEST_H

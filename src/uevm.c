@@ -8,7 +8,6 @@
  * @brief μEVM public API impl.
  */
 
-#include <stdio.h>
 #include "core/math.h"
 #include "uevm/api.h"
 

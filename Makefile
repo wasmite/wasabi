@@ -18,7 +18,7 @@ BUILD_DIR = build
 __mkdir:
 	mkdir -p $(BUILD_DIR)
 
-all: test
+all: check build unit
 .PHONY: all
 
 fmt: ## apply `clang-format` to source code
@@ -28,7 +28,9 @@ fmt: ## apply `clang-format` to source code
 
 check:
 	find . -iname *.h -o -iname *.c \
-		| xargs clang-tidy -checks='*' -fix
+		| xargs clang-tidy -checks='*'
+	find . -iname *.h -o -iname *.c \
+		| xargs cppcheck
 .PHONY: check
 
 unit: __mkdir
@@ -41,7 +43,7 @@ build: __mkdir
 .PHONY: build
 
 test: __mkdir
-	$(CC) $(TST_CFLAGS) -I./include $(_FILES) -o $(BUILD_DIR)/uevm
+	$(CC) $(TST_CFLAGS) -I./include $(SRC_FILES) -o $(BUILD_DIR)/uevm
 	$(BUILD_DIR)/uevm
 .PHONY: test
 
