@@ -30,7 +30,7 @@ check:
 	find . -iname *.h -o -iname *.c \
 		| xargs clang-tidy -checks='*'
 	find . -iname *.h -o -iname *.c \
-		| xargs cppcheck
+		| xargs cppcheck --enable=all
 .PHONY: check
 
 unit: __mkdir
