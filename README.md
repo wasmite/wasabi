@@ -66,6 +66,10 @@ an application needs to embed μEVM.
 
 Check out [the documentation](docs/Readme.md) for more details.
 
+## FAQ
+
+TBD
+
 ## Public Domain
 
 This is free and unencumbered software released into the public domain.
