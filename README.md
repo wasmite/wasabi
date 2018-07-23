@@ -66,7 +66,7 @@ an application needs to embed μEVM.
 
 Check out [the documentation](docs/Readme.md) for more details.
 
-## FAQ
+## Q&A
 
 TBD
 
