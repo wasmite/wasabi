@@ -50,7 +50,7 @@ make coverage
 How to run functional tests:
 
 ```bash
-make tests
+make func
 ```
 
 How to clean up build files:

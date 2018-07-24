@@ -17,3 +17,4 @@ dist
 *.o
 *.so
 *.dylib
+*.plist
