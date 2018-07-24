@@ -1,7 +1,19 @@
 COMMON_FLAGS = -Wall -Wextra -Werror
-COMMON_FLAGS += -Wmissing-declarations
+COMMON_FLAGS += -Wformat-nonliteral
+COMMON_FLAGS += -Wcast-align
+COMMON_FLAGS += -Wpointer-arith
+COMMON_FLAGS += -Wbad-function-cast
 COMMON_FLAGS += -Wmissing-prototypes
 COMMON_FLAGS += -Wstrict-prototypes
+COMMON_FLAGS += -Wmissing-declarations
+COMMON_FLAGS += -Winline
+COMMON_FLAGS += -Wundef
+COMMON_FLAGS += -Wnested-externs
+COMMON_FLAGS += -Wcast-qual
+COMMON_FLAGS += -Wshadow
+COMMON_FLAGS += -Wwrite-strings
+COMMON_FLAGS += -Wno-unused-parameter
+COMMON_FLAGS += -Wfloat-equal
 
 SRC_CFLAGS ?= $(COMMON_FLAGS) -DNDEBUG -c -ansi -pedantic
 TST_CFLAGS ?= $(COMMON_FLAGS) -g -std=c99
