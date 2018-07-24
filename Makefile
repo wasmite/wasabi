@@ -15,8 +15,8 @@ COMMON_FLAGS += -Wwrite-strings
 COMMON_FLAGS += -Wno-unused-parameter
 COMMON_FLAGS += -Wfloat-equal
 
-SRC_CFLAGS ?= $(COMMON_FLAGS) -DNDEBUG -c -ansi -pedantic
-TST_CFLAGS ?= $(COMMON_FLAGS) -g -std=c99
+DBG_CFLAGS ?= $(COMMON_FLAGS) -g -std=c99
+RLS_CFLAGS ?= $(COMMON_FLAGS) -DNDEBUG -c -ansi -pedantic
 
 ifeq ($(CC),clang)
 SRC_CFLAGS += --analyze
@@ -27,8 +27,7 @@ TST_FILES = ./tests/uevm_test.c
 
 BUILD_DIR = build
 
-all : fmt check build unit
-	$(BUILD_DIR)/uevm_unit
+all : fmt check unit build
 .PHONY: all
 
 fmt:
@@ -44,16 +43,17 @@ check:
 .PHONY: check
 
 build: __mkdir
-	## TODO: build into a single C-file named "uevm.c"
-	$(CC) $(SRC_CFLAGS) -I./include $(SRC_FILES)
+	$(CC) $(RLS_CFLAGS) -I./include $(SRC_FILES)
 .PHONY: build
 
 unit: __mkdir
-	$(CC) $(TST_CFLAGS) -I./include -o $(BUILD_DIR)/uevm_unit $(SRC_FILES)
+	$(CC) $(DBG_CFLAGS) -I./include -o $(BUILD_DIR)/uevm_unit $(SRC_FILES)
+	$(BUILD_DIR)/uevm_unit
 .PHONY: unit
 
 func: __mkdir
-	$(CC) $(TST_CFLAGS) -I./include -o $(BUILD_DIR)/uevm_func $(TST_FILES)
+	$(CC) $(DBG_CFLAGS) -I./include -o $(BUILD_DIR)/uevm_func $(TST_FILES)
+	$(BUILD_DIR)/uevm_func
 .PHONY: func
 
 clean:

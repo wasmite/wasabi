@@ -9,8 +9,8 @@
  * @brief Unittests releated macros
  */
 
-#ifndef _UEVM_SRC_CORE_TEST_H
-#define _UEVM_SRC_CORE_TEST_H
+#ifndef CORE_TEST_H
+#define CORE_TEST_H
 
 #include <stdio.h>
 
@@ -28,12 +28,12 @@
     }                                                               \
   } while (0)
 
-#define TESTCASE(case)                \
-  do {                                \
-    int resp;                         \
-    if (resp = (case)()) return resp; \
+#define TESTCASE(case)                  \
+  do {                                  \
+    int resp;                           \
+    if ((resp = (case)())) return resp; \
   } while (0)
 
 #define TESTSUIT(suit) TESTCASE(suit)
 
-#endif  // _UEVM_SRC_CORE_TEST_H
+#endif /* CORE_TEST_H */

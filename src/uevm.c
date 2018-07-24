@@ -18,7 +18,7 @@ uint8_t uevm_add(uint8_t a, uint8_t b) {
 #ifndef NDEBUG
 #include "core/test.h"
 
-int main() {
+int main(void) {
   TESTSUIT(math_testsuit);
   return 0;
 }
