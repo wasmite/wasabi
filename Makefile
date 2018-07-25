@@ -16,10 +16,7 @@ CFLAGS += -Wno-unused-parameter
 CFLAGS += -Wfloat-equal
 
 DBG_CFLAGS ?= $(CFLAGS) -g -std=c99
-RLS_CFLAGS ?= $(CFLAGS) -O0 -c -ansi -pedantic
-ifeq ($(CC), clang)
-  RLS_CFLAGS += --analyze
-endif
+DST_CFLAGS ?= $(CFLAGS) -g -ansi -pedantic
 
 rwildcard=$(wildcard $1$2) \
 	$(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))
@@ -30,7 +27,7 @@ TST_FILES = $(call rwildcard,tests/,*.c)
 
 BLD_DIR = build
 
-all : fmt cbuild tidycheck cppcheck unit
+all : fmt cmain tidycheck cppcheck unit
 .PHONY: all
 
 fmt:
@@ -41,12 +38,12 @@ fmt:
 tidycheck:
 	@ clang-tidy -header-filter=.* -system-headers --quiet \
 		-checks='-*,bugprone-*,cert-*,clang-analyzer-*,-clang-analyzer-cplusplus*,performance-*,portability-*,readability-*' \
-		$(CMD_FILES) $(SRC_FILES) $(TST_FILES) -- --std=c99 -I./include
+		$(CMD_FILES) $(SRC_FILES) -- --std=c99 -I./include
 .PHONY: tidycheck
 
 cppcheck:
 	@ cppcheck --cppcheck-build-dir=$(BLD_DIR) --enable=all --quiet \
-		--std=c99 -I ./include cmd src tests
+		--std=c99 -I ./include cmd src
 .PHONY: cppcheck
 
 run: cmain
@@ -61,12 +58,8 @@ func: cfunc
 	@ $(BLD_DIR)/uevm_func
 .PHONY: func
 
-cbuild: __bdir
-	@ $(CC) $(RLS_CFLAGS) -DNDEBUG -DNUNIT -I./include $(CMD_FILES) $(SRC_FILES)
-.PHONY: cbuild
-
 cmain: __bdir
-	@ $(CC) $(DBG_CFLAGS) -DNUNIT -I./include -o $(BLD_DIR)/uevm $(CMD_FILES) $(SRC_FILES)
+	@ $(CC) $(DST_CFLAGS) -DNUNIT -I./include -o $(BLD_DIR)/uevm $(CMD_FILES) $(SRC_FILES)
 .PHONY: cmain
 
 cunit: __bdir

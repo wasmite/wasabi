@@ -4,7 +4,7 @@
  */
 
 /**
- * @file  uevm_cli.c
+ * @file  main.c
  * @brief μEVM CLI impl.
  */
 
