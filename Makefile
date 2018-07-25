@@ -16,56 +16,67 @@ COMMON_FLAGS += -Wno-unused-parameter
 COMMON_FLAGS += -Wfloat-equal
 
 DBG_CFLAGS ?= $(COMMON_FLAGS) -g -std=c99
-RLS_CFLAGS ?= $(COMMON_FLAGS) -DNDEBUG -c -ansi -pedantic
-
-ifeq ($(CC),clang)
-RLS_CFLAGS += --analyze
+RLS_CFLAGS ?= $(COMMON_FLAGS) -DNDEBUG -ansi -pedantic
+ifeq ($(CC), clang)
+  RLS_CFLAGS += --analyze
 endif
 
 rwildcard=$(wildcard $1$2) \
 	$(foreach d,$(wildcard $1*),$(call rwildcard,$d/,$2))
 
+CMD_FILES = $(call rwildcard,cmd/,*.c)
 SRC_FILES = $(call rwildcard,src/,*.c)
 TST_FILES = $(call rwildcard,tests/,*.c)
 
 BUILD_DIR = build
 
-all : fmt check unit build
+all : fmt cbuild tidycheck cppcheck unit
 .PHONY: all
 
 fmt:
 	@ clang-format -i -style=file -fallback-style=none \
-		$(call rwildcard,include/,*.h) \
-		$(call rwildcard,src/,*.h) \
-		$(SRC_FILES)
+		$(call rwildcard,include/,*.h) $(SRC_FILES)
 .PHONY: fmt
 
-check:
+tidycheck:
 	@ clang-tidy -header-filter=.* -system-headers --quiet \
 		-checks='-*,bugprone-*,cert-*,clang-analyzer-*,-clang-analyzer-cplusplus*,performance-*,portability-*,readability-*' \
 		$(SRC_FILES) -- --std=c99 -I./include
+.PHONY: tidycheck
+
+cppcheck:
 	@ cppcheck --cppcheck-build-dir=$(BUILD_DIR) --enable=all --quiet \
 		--std=c99 -I ./include src
-.PHONY: check
+.PHONY: cppcheck
 
-build: __mkdir
-	@ $(CC) $(RLS_CFLAGS) -I./include $(SRC_FILES)
-.PHONY: build
+run: cmain
+	@ $(BUILD_DIR)/uevm
+.PHONY: run
 
-unit: __mkdir
-	@ $(CC) $(DBG_CFLAGS) -I./include -o $(BUILD_DIR)/uevm_unit $(SRC_FILES)
+unit: cunit
 	@ $(BUILD_DIR)/uevm_unit
 .PHONY: unit
 
-func: __mkdir
-	@ $(CC) $(DBG_CFLAGS) -I./include -o $(BUILD_DIR)/uevm_func $(TST_FILES)
+func: cfunc
 	@ $(BUILD_DIR)/uevm_func
 .PHONY: func
+
+cmain: __bdir
+	@ $(CC) $(RLS_CFLAGS) -DNUNIT -I./include -o $(BUILD_DIR)/uevm $(CMD_FILES) $(SRC_FILES)
+.PHONY: cbuild
+
+cunit: __bdir
+	@ $(CC) $(DBG_CFLAGS) -I./include -o $(BUILD_DIR)/uevm_unit $(SRC_FILES)
+.PHONY: cunit
+
+cfunc: __bdir
+	@ $(CC) $(DBG_CFLAGS) -DNUNIT -I./include -o $(BUILD_DIR)/uevm_func $(SRC_FILES) $(TST_FILES)
+.PHONY: cfunc
 
 clean:
 	@ rm -rf $(BUILD_DIR)
 .PHONY: clean
 
-__mkdir:
+__bdir:
 	@ mkdir -p $(BUILD_DIR)
-.PHONY: __mkdir
+.PHONY: __bdir

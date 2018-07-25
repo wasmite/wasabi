@@ -8,14 +8,14 @@
  * @brief Math util functions.
  */
 
-#include "math.h"
+#include "internal/math.h"
 
 uint8_t math_add(uint8_t a, uint8_t b) {
   return a + b;
 }
 
-#ifndef NDEBUG
-#include "test.h"
+#ifndef NUNIT
+#include "internal/test.h"
 
 static int test_add(void) {
   ASSERT(math_add(0, 0) == 0);

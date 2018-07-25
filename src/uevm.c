@@ -8,15 +8,15 @@
  * @brief μEVM public API impl.
  */
 
-#include "core/math.h"
+#include "internal/math.h"
 #include "uevm/api.h"
 
 uint8_t uevm_add(uint8_t a, uint8_t b) {
   return math_add(a, b);
 }
 
-#ifndef NDEBUG
-#include "core/test.h"
+#ifndef NUNIT
+#include "internal/test.h"
 
 static int test_add(void) {
   ASSERT(uevm_add(0, 0) == 0);

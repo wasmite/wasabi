@@ -8,10 +8,10 @@
  * @brief Math util functions.
  */
 
-#ifndef CORE_MATH_H
-#define CORE_MATH_H
+#ifndef INTERNAL_MATH_H
+#define INTERNAL_MATH_H
 
-#include <uevm/types.h>
+#include "uevm/types.h"
 
 #ifdef __cplusplus
 extern "C" {
@@ -27,7 +27,7 @@ extern "C" {
  */
 uint8_t math_add(uint8_t a, uint8_t b);
 
-#ifndef NDEBUG
+#ifndef NUNIT
 int math_testsuit(void);
 #endif
 
@@ -35,4 +35,4 @@ int math_testsuit(void);
 }
 #endif
 
-#endif /* CORE_MATH_H */
+#endif /* INTERNAL_MATH_H */

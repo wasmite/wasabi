@@ -9,7 +9,7 @@
  */
 
 #include <stdio.h>
-#include "uevm/api.h"
+#include <uevm/api.h>
 
 #define FAIL()                                       \
   do {                                               \
@@ -25,7 +25,7 @@
     }                                                               \
   } while (0)
 
-int main() {
+int main(void) {
   ASSERT(uevm_add(0, 0) == 0);
   ASSERT(uevm_add(0, 1) == 1);
   ASSERT(uevm_add(1, 0) == 1);
