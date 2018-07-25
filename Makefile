@@ -30,7 +30,7 @@ TST_FILES = $(call rwildcard,tests/,*.c)
 
 BUILD_DIR = build
 
-all : fmt cbuild tidycheck cppcheck unit
+all : fmt cmain tidycheck cppcheck unit
 .PHONY: all
 
 fmt:
