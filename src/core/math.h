@@ -35,4 +35,4 @@ int math_testsuit(void);
 }
 #endif
 
-#endif  /* CORE_MATH_H */
+#endif /* CORE_MATH_H */
