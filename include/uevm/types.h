@@ -26,4 +26,8 @@ typedef __int64 int64_t;
 #include <stdint.h>
 #endif /* defined(_MSC_VER) && (_MSC_VER < 1600) */
 
+typedef int bool;
+#define TRUE 1
+#define FALSE 0
+
 #endif /* UEVM_TYPES_H */
