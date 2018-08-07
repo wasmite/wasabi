@@ -8,7 +8,7 @@
  * @brief μEVM public API impl.
  */
 
-#include "internal/math.h"
+#include "internal/math_big_uint.h"
 #include "uevm/api.h"
 
 uint8_t uevm_add(uint8_t a, uint8_t b) {

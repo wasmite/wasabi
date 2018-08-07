@@ -8,34 +8,24 @@
  * @brief Math util functions.
  */
 
-#ifndef INTERNAL_MATH_H
-#define INTERNAL_MATH_H
+#ifndef INTERNAL_BIGINT_H
+#define INTERNAL_BIGINT_H
 
+#include "internal/math_big_uint.h"
 #include "uevm/types.h"
 
 #ifdef __cplusplus
 extern "C" {
 #endif
 
-#define BIGINT_BYTES_SIZE 32
-
 /*
  * @brief
  *
  */
 typedef struct BigInt {
-  uint8_t value[BIGINT_BYTES_SIZE];
+  BigUint abs; /* absolute value of signed integer */
+  int sign;    /* sign of integer */
 } BigInt;
-
-static const BigInt BIGINT_ZERO = {
-    {0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00,
-     0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}};
-
-static const BigInt BIGINT_MAX = {
-    {0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
-     0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff,
-     0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff}};
 
 /*
  * @brief Create new BigInt from provided array
@@ -45,27 +35,37 @@ static const BigInt BIGINT_MAX = {
  *
  * @returns a new BigInt
  */
-BigInt *set(BigInt *n, uint8_t *value, size_t len);
+bool set(BigInt *n, uint8_t *value, size_t len);
 
 /*
- * @brief Helper function that adds two unsigned 8-bits numbers.
+ * @brief Helper function that adds two BigInt numbers.
  *
  * @param[in] a     first number
  * @param[in] b     second number
  *
  * @returns a sum of two given numbers
  */
-BigInt math_add(BigInt a, BigInt b);
+BigInt add(BigInt a, BigInt b);
 
 /*
- * @brief Helper function that substract two unsigned 8-bits numbers.
+ * @brief Helper function that substract two BigInt numbers.
  *
  * @param[in] a     first number
  * @param[in] b     second number
  *
  * @returns a difference of two given numbers
  */
-BigInt math_sub(BigInt a, BigInt b);
+BigInt sub(BigInt a, BigInt b);
+
+/*
+ * @brief Helper function that divides two BigInt numbers.
+ *
+ * @param[in] a     first number
+ * @param[in] b     second number
+ *
+ * @returns a division of two given numbers
+ */
+BigInt div(BigInt a, BigInt b);
 
 /*
  * @brief Helper function that  compare 2 BigInt values
@@ -75,7 +75,16 @@ BigInt math_sub(BigInt a, BigInt b);
  *
  * @returns true if same value, false if different
  */
-bool math_cmp(BigInt a, BigInt b);
+bool cmp(BigInt a, BigInt b);
+
+/*
+ * @brief Helper function that sign of BigInt value
+ *
+ * @param[in] a     BigInt value to check sign
+ *
+ * @returns true if same value, false if different
+ */
+int sign(BigInt a);
 
 /*
  * @brief Create new BigInt from provided string
@@ -88,21 +97,12 @@ bool math_cmp(BigInt a, BigInt b);
 /* BigInt FromStr(char *str, size_t len); */
 
 #ifndef NUNIT
-void BigInt_print(BigInt src);
 
 int test_new(void);
-
-int test_cmp(void);
-
-int test_add_lower(void);
-
-int test_add_upper(void);
-
-int math_testsuit(void);
 #endif
 
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* INTERNAL_MATH_H */
+#endif /* INTERNAL_BigInt_H */
