@@ -48,7 +48,7 @@ static const BigUint BIGUINT_MAX = {
  *
  * @returns a new BigUint set to 0
  */
-BigUint new(void);
+BigUint new (void);
 
 /*
  * @brief Set BigUint value to provided array
@@ -154,13 +154,13 @@ BigUint math_or(BigUint a, BigUint b);
 int math_lshift(BigUint *a, uint8_t shift_size);
 
 /*
-* @brief Bitwise shift right (`<<`) of BigUint
-*
-* @param[in] a              value to be shifted
-* @param[in] shift_size     size of shift
-*
-* @returns a >> shift_size
-*/
+ * @brief Bitwise shift right (`<<`) of BigUint
+ *
+ * @param[in] a              value to be shifted
+ * @param[in] shift_size     size of shift
+ *
+ * @returns a >> shift_size
+ */
 int math_rshift(BigUint *a, uint8_t shift_size);
 
 /*

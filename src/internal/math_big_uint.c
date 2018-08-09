@@ -11,7 +11,7 @@
 #include "internal/math_big_uint.h"
 #include <stdio.h>
 
-static int _get_bit(BigUint *a, uint8_t pos) {
+/* static int _get_bit(BigUint *a, uint8_t pos) {
   int res;
   uint8_t word = pos / WORD_SIZE;
   uint8_t bits = pos % WORD_SIZE;
@@ -24,7 +24,7 @@ static int _get_bit(BigUint *a, uint8_t pos) {
   }
 
   return res;
-}
+} */
 
 static void _set_bit(BigUint *a, uint8_t pos) {
   uint8_t word = pos / WORD_SIZE;
@@ -38,7 +38,7 @@ static void _set_bit(BigUint *a, uint8_t pos) {
   }
 }
 
-static void _unset_bit(BigUint *a, uint8_t pos) {
+/* static void _unset_bit(BigUint *a, uint8_t pos) {
   uint8_t word = pos / WORD_SIZE;
   uint8_t bits = pos % WORD_SIZE;
 
@@ -48,9 +48,9 @@ static void _unset_bit(BigUint *a, uint8_t pos) {
     uint8_t mask = 0xFF << bits;
     a->abs[word + 1] = a->abs[word + 1] & mask;
   }
-}
+} */
 
-BigUint new() {
+BigUint new () {
   return BIGUINT_ZERO;
 }
 
@@ -265,7 +265,7 @@ int test_add(void) {
 int test_add_overflow(void) {
   BigUint a, b, res;
   a = b = res = new ();
-  b = BIGUINT_MAX;
+  a = BIGUINT_MAX;
   uint8_t v2[] = {0x01};
 
   set(&b, v2, 1);
@@ -331,11 +331,35 @@ int test_mod(void) {
 }
 
 int test_lshift(void) {
-  return 1;
+  BigUint a, res;
+  a = res = new ();
+  uint8_t v1[] = {0x01};
+  uint8_t v2[] = {0x02};
+
+  set(&a, v1, 1);
+  set(&res, v2, 1);
+  math_lshift(&a, 1);
+
+  /* BigUint_print(res); */
+  ASSERT(math_cmp(res, a) == 0);
+
+  return 0;
 }
 
 int test_rshift(void) {
-  return 1;
+  BigUint a, res;
+  a = res = new ();
+  uint8_t v1[] = {0x01};
+  uint8_t v2[] = {0x02};
+
+  set(&a, v2, 1);
+  set(&res, v1, 1);
+  math_lshift(&a, 1);
+
+  /* BigUint_print(res); */
+  ASSERT(math_cmp(res, a) == 0);
+
+  return 0;
 }
 
 int test_and(void) {
@@ -347,19 +371,19 @@ int test_or(void) {
 }
 
 int math_testsuit(void) {
-  TESTCASE(test_new);
-  TESTCASE(test_cmp);
-  TESTCASE(test_add);
+  // TESTCASE(test_new);
+  // TESTCASE(test_cmp);
+  // TESTCASE(test_add);
   TESTCASE(test_add_overflow);
-  TESTCASE(test_sub);
-  TESTCASE(test_sub_underflow);
-  TESTCASE(test_mul);
-  TESTCASE(test_div);
-  TESTCASE(test_mod);
-  TESTCASE(test_lshift);
-  TESTCASE(test_rshift);
-  TESTCASE(test_and);
-  TESTCASE(test_or);
+  // TESTCASE(test_sub);
+  // TESTCASE(test_sub_underflow);
+  // TESTCASE(test_mul);
+  // TESTCASE(test_div);
+  // TESTCASE(test_mod);
+  // TESTCASE(test_lshift);
+  // TESTCASE(test_rshift);
+  // TESTCASE(test_and);
+  // TESTCASE(test_or);
   return 0;
 }
 #endif
