@@ -17,14 +17,15 @@
 extern "C" {
 #endif
 
-#define BIGUINT_BYTES_SIZE 32
+#define WORD_SIZE 8
+#define BIGUINT_WORDS_SIZE 32
 
 /*
  * @brief
  *
  */
 typedef struct BigUint {
-  uint8_t abs[BIGUINT_BYTES_SIZE]; /* absolute value of an unsigned integer */
+  uint8_t abs[BIGUINT_WORDS_SIZE]; /* absolute value of an unsigned integer */
 } BigUint;
 
 static const BigUint BIGUINT_ZERO = {
@@ -43,12 +44,19 @@ static const BigUint BIGUINT_MAX = {
      0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff, 0xff}};
 
 /*
- * @brief Create new BigUint from provided array
+ * @brief Create new BigUint
  *
- * @param[in] value   init array
- * @param[in] len     length of init array
+ * @returns a new BigUint set to 0
+ */
+BigUint new (void);
+
+/*
+ * @brief Set BigUint value to provided array
  *
- * @returns a new BigUint
+ * @param[in] value   initialization array
+ * @param[in] len     length of array
+ *
+ * @returns BigUint set to `value` array
  */
 bool set(BigUint *n, uint8_t *value, size_t len);
 
@@ -116,6 +124,46 @@ BigUint math_div(BigUint a, BigUint b);
 int math_cmp(BigUint a, BigUint b);
 
 /*
+ * @brief Bitwise `and` of two BigUint
+ *
+ * @param[in] a     first number
+ * @param[in] b     second number
+ *
+ * @returns a & b
+ */
+BigUint math_and(BigUint a, BigUint b);
+
+/*
+ * @brief Bitwise `or` of two BigUint
+ *
+ * @param[in] a     first number
+ * @param[in] b     second number
+ *
+ * @returns a | b
+ */
+BigUint math_or(BigUint a, BigUint b);
+
+/*
+ * @brief Bitwise shift left (`<<`) of BigUint
+ *
+ * @param[in] a             value to be shifted
+ * @param[in] shift_size    size of shift
+ *
+ * @returns a << shift_size
+ */
+int math_lshift(BigUint *a, uint8_t shift_size);
+
+/*
+ * @brief Bitwise shift right (`<<`) of BigUint
+ *
+ * @param[in] a              value to be shifted
+ * @param[in] shift_size     size of shift
+ *
+ * @returns a >> shift_size
+ */
+int math_rshift(BigUint *a, uint8_t shift_size);
+
+/*
  * @brief Create new BigUint from provided string
  *
  * @param[in] str     string of value
@@ -127,25 +175,19 @@ int math_cmp(BigUint a, BigUint b);
 
 #ifndef NUNIT
 void BigUint_print(BigUint src);
-
 int test_new(void);
-
 int test_cmp(void);
-
 int test_sub(void);
-
 int test_sub_underflow(void);
-
 int test_add(void);
-
 int test_add_overflow(void);
-
 int test_mul(void);
-
 int test_div(void);
-
 int test_mod(void);
-
+int test_and(void);
+int test_or(void);
+int test_lshift(void);
+int test_rshift(void);
 int math_testsuit(void);
 #endif
 
