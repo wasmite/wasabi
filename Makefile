@@ -13,7 +13,6 @@ CFLAGS += -Wwrite-strings
 CFLAGS += -Wno-unused-parameter
 CFLAGS += -Wfloat-equal
 
-DBG_CFLAGS ?= $(CFLAGS) -g -std=c99
 DST_CFLAGS ?= $(CFLAGS) -g -ansi -pedantic
 DST_CFLAGS += -Wformat-nonliteral
 DST_CFLAGS += -Wcast-qual
