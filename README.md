@@ -68,7 +68,7 @@ Check out [the documentation](docs/Readme.md) for more details.
 
 ## Q&A
 
-TBD
+TBD;
 
 ## Public Domain
 
